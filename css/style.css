@@ -1,0 +1,178 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.game-board{
+    width: 100%;
+    height: 80vh;
+    max-width: 1400px;
+    border-bottom: 15px solid rgb(7, 134, 7);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87ceeb, #e0f6ff);
+}
+
+.pipe{
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    animation: pipe-animation 3s infinite linear;
+}
+
+.mario{
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+}
+
+.jump{
+    animation: mario-jump 700ms ease-out;
+}
+
+.gamer-over{
+    width: 100px;
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    display: none;
+}
+
+.clouds{
+    width: 550px;
+    position: absolute;
+    animation: cloudani 20s infinite linear;
+}
+
+.fim-jogo{
+    width: 50%;
+    padding: 40px;
+    background: rgba(224, 0, 0, 0.8);
+    box-shadow: -3px 3px 1em red;
+    text-align: center;
+    left: 25%;
+    top: 15%;
+    position: absolute;
+    z-index: 999;
+    display: none;
+}
+
+.fim-jogo:hover{
+    box-shadow: 3px -3px 2em red;
+}
+
+.fim-jogo:active{
+    box-shadow: 3px 3px 2em #87ceeb;
+}
+
+.fim-jogo p{
+    color: white;
+    font-size: 3vw;
+}
+
+.btn{
+    width: 50%;
+    padding: 30px;
+    position: absolute;
+    left: 25%;
+    top: 45%;
+    background: #5994ac;
+    font-size: 3vw;
+    border: none;
+    box-shadow: 3px -3px 1em #87ceeb;
+    color: whitesmoke;
+    text-align: center;
+    display: none;
+    cursor: pointer;
+}
+
+.btn:hover{
+    box-shadow: -6px 6px 2em #3c7991;
+}
+
+.btn:active{
+    box-shadow: 3px 3px 2em #87ceeb;
+}
+
+
+
+@keyframes pipe-animation{
+    from{
+        right: -80px;
+    }
+    to{
+        right: 100%;
+    }
+}
+
+@keyframes mario-jump{
+    0%{
+        bottom: 0;
+    }
+
+    50%{
+        bottom: 180px;
+    }
+
+    75%{
+        bottom: 180px;
+    }
+
+    85%{
+        bottom: 80px;
+    }
+
+    100%{
+        bottom: 0;
+    }
+}
+
+@keyframes cloudani{
+    from{
+        right: -550px;}
+
+
+    to{
+        right: 100%;
+    }
+}
+
+@media screen and (max-width: 575px){
+    .clouds{
+        width: 350px;
+    }
+
+    .fim-jogo{
+        width: 70%;
+        padding: 20px;
+        left: 15%;
+        top: 20%;
+    }
+
+    .btn{
+        width: 70%;
+        padding: 20px;
+        top: 35%;
+        left: 15%;
+    }
+
+}
+
+@media screen and (max-width: 300px){
+
+    .fim-jogo p{
+        font-size: 13vw;
+    }
+    
+    .fim-jogo{
+        top: 5%;
+    }
+    .btn{
+        font-size: 13vw; 
+        top: 30%;
+    }
+
+
+}
